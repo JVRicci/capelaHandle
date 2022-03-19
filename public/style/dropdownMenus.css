@@ -1,0 +1,60 @@
+:root{
+    --cor-fundo:#23232e;
+    --cor-hover: rgb(87, 255, 247);
+    --cor-primaria: rgb (255,255,255);
+}
+
+.nav-header ul{
+    padding:0;
+}
+
+.nav-header ul li{
+    display:inline-block;
+    position:relative;
+}
+
+.nav-header ul li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-header ul li a:hover{
+    background-color: var(--cor-hover);
+    color:black;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+/*Sub menu*/
+.nav-header ul ul{
+    display:none;
+    left: 1;
+    background-color: var(--cor-fundo);
+    box-shadow: 0 0 5px var(--cor-fundo);
+    width: 150px;
+    
+}
+
+
+.nav-header ul ul li a{
+    display: block;
+    position:relative;
+    animation:expand .5s;
+    
+}
+
+.nav-header ul li:hover ul{
+    display: block;
+}
+
+
+@keyframes expand{
+    from{
+        top:-20;
+    }
+    to{
+        top:0;
+    }
+}

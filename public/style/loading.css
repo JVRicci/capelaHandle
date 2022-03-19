@@ -1,0 +1,26 @@
+.loading{
+
+    z-index: inherit;
+    display:none;
+    
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;   
+
+    
+    box-shadow: 1px rgb(13, 13, 145);
+
+    animation: is-rotating 1s infinite;
+    border-radius:50%;
+    border: 20px solid #e5e5e5;
+    border-top-color: rgb(13, 13, 145);
+    width:250px;
+    height:250px;
+}
+
+@keyframes is-rotating{
+    to{
+        transform: rotate(1turn);
+    }
+}
+

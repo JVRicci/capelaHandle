@@ -1,0 +1,61 @@
+body{
+    background: rgb(0,6,36);
+    background: radial-gradient(circle, rgba(0,6,36,0.46336206896551724) 0%,
+    rgba(49,92,212,0.625) 84%, rgba(0,140,255,0.6508620689655172) 100%);
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: abrir 1s;
+
+}
+
+h1{
+    font-size:35px;
+}
+
+#divPrincipal{
+    background-color:white;
+
+    position:relative;
+    border: 1px solid;
+    border-radius:10px;
+
+    width: 100%;
+
+    padding:50px;
+    width: 280px;
+
+    box-shadow: 10px 10px;
+}
+
+
+
+input[type='text'], input[type='password']{
+
+    margin-bottom:25px;
+    border:1px ridge;
+    border-radius: 10px;
+    padding: 5px;
+    text-align:center;
+}
+
+
+@keyframes abrir{
+    from{
+        opacity:0 ;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes leva-element{
+    from{
+        margin-left:-50px
+    }
+    to{
+        margin-left:0
+    }
+}

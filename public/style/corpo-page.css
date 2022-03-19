@@ -1,0 +1,38 @@
+
+.corpoPageDiv{
+    
+    z-index: inherit;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+
+    border: 0px solid;
+    border-radius:10px;
+    border-color: black;
+
+    padding: 50px;
+    height: 80vh;
+    width: 150vh;
+
+    animation: abrir 1.5s; 
+    box-shadow: 0 0 10px;
+
+    background: rgb(0,6,36);
+    background: linear-gradient(90deg, rgba(0,6,36,0.46336206896551724) 0%, 
+    rgba(41,168,213,0.9892241379310345) 0%, rgba(0,215,255,0.3426724137931034) 99%);
+
+}
+
+@keyframes abrir{
+    from{
+        opacity:0 ;
+    }
+    to{
+        opacity:1;
+    }
+}
