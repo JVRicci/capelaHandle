@@ -2,11 +2,17 @@ const express = require('express')
 const path = require ('path')
 const { engine } = require ('express-handlebars');
 const sql = require('mssql/msnodesqlv8');
-const db = require('./config/database.js');
+const db = require('./config/db.js');
+const bodyParser = require('body-parser');
+const sequelize = require('./config/db.js');
+const post = require('./config/Posts.js');
 
 
 const app = express();
 const port = '3000';
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.engine('handlebars', engine({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
@@ -36,7 +42,7 @@ app.get('/login',(req,res)=>{
             if(result != null){
                 
                 req.session.login = login;
-                res.render('inicio');
+                res.render('main');
             }
             else{
                 res.render('login/login');
@@ -62,33 +68,29 @@ app.get('/inicio', (req, res)=>{
 });
 
 app.get('/dizimo',(req,res)=>{
-     async function selectDizimista(){
 
-        try{
-            let con = await sql.connect(db);
-            let comando = await con.request().query("select d.nome, e.logradouro, e.bairro, c.celular"+
-               " from dizimistas as d "+
-               " inner join contato as c on(d.idContato = c.id) "+
-               " inner join endereco as e on(d.idEndereco = e.id);");
-
-            let result = comando.recordset;
-
-            console.log(result);
-                    
-            res.render('dizimo/dizimo',{dizimista:result})
-                            
+    (async ()=>{
+        var query = await post.dizimista.findAll({
+            raw: true,
+            attributes:['id', 'nome', 'endereco.logradouro', 'endereco.bairro', 'contato.celular'],
+            include:[{ 
+                model: post.endereco, attributes:['logradouro', 'bairro']
+            },{
+                model: post.contato, attributes:['celular']
+            }],
             
-        }
-        catch(err){
-            console.log(err);
-            sql.close;
-        }
-    }
-    selectDizimista();
+        });
+
+        console.log( query)
+        res.render('dizimo/dizimo', {dizimista: query})
+    
+    })();
 });
 
+
+
 app.get('/', (req,res)=>{
-    res.render('inicio');
+    res.render('login');
 });
 
 app.listen(port, (req,res)=>{
