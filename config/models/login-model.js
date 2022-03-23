@@ -22,3 +22,4 @@ const usuario = db.sequelize.define('usuario',{
     }
 
 },{freezeTableName: true})
+

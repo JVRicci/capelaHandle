@@ -1,27 +1,5 @@
 const db = require("./db.js");
 
-const endereco = db.sequelize.define('endereco',{
-    logradouro:{
-        type: db.Sequelize.STRING
-    },
-    numero: {
-        type: db.Sequelize.STRING
-    },
-    bairro:{
-        type: db.Sequelize.STRING
-    },
-    cep: {
-        type: db.Sequelize.STRING
-    },
-    uf:{
-        type: db.Sequelize.STRING
-    },
-    cidade:{
-        type: db.Sequelize.STRING
-    }
-});
-
-
 const contato = db.sequelize.define('contato',{
     telefone:{
         type:db.Sequelize.STRING
@@ -87,11 +65,66 @@ const dizimos = db.sequelize.define('dizimos',{
 });
 
 
+const endereco = db.sequelize.define('endereco',{
+    logradouro:{
+        type: db.Sequelize.STRING
+    },
+    numero: {
+        type: db.Sequelize.STRING
+    },
+    bairro:{
+        type: db.Sequelize.STRING
+    },
+    cep: {
+        type: db.Sequelize.STRING
+    },
+    uf:{
+        type: db.Sequelize.STRING
+    },
+    cidade:{
+        type: db.Sequelize.STRING
+    }
+});
+
+
+const usuario = db.sequelize.define('usuario',{
+
+    nome:{
+        type: db.Sequelize.STRING
+    },
+    sexo:{
+        type: db.Sequelize.STRING
+    },
+    funcao:{
+        type: db.Sequelize.STRING
+    },
+    cpf:{
+        type: db.Sequelize.STRING
+    },
+    ativo:{
+        type: db.Sequelize.STRING
+    },
+    idLogin:{
+        type: db.Sequelize.STRING
+    }
+
+},{freezeTableName: true});
+
+const login = db.sequelize.define('login',{
+    login: {
+        type: db.Sequelize.STRING
+    },
+    senha:{
+        type: db.Sequelize.STRING
+    }
+},{freezeTableName: true})
+
 dizimista.belongsTo(endereco,{foreignKey:'id',target:'idEndereco'})
 dizimista.belongsTo(contato,{foreignKey:'id',target:'idContato'})
+usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'})
 
 
 
-module.exports= {dizimista, dizimos, endereco, contato}
+module.exports= {dizimista, dizimos, endereco, contato, login, usuario}
 
 
