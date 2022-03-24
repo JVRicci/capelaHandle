@@ -1,14 +1,17 @@
 
-
 function carregaDiv(){
 
-    var estado = document.getElementByName("estado-civil");
-    var divCasa = document.getElementsByClassName("div-casamento");
+    var estado = document.getElementById("estado-civil");
+    var divCasa = document.getElementsByClassName("div-casamento")[0];
 
     estado.addEventListener('change', ()=>{
-        var result =document.querySelector('.result');
-        divCasa.style.display = "inline";
-    });
+        if(estado.value=="nulo" || estado.value=='solteiro'){
+            divCasa.style.display = "none";
+        }
+        else{
+            divCasa.style.display = "inline";
+        }
+    },false);
 
 }
-
+carregaDiv()

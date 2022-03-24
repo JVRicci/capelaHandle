@@ -1,11 +1,11 @@
 const express = require('express')
 const path = require ('path')
 const { engine } = require ('express-handlebars');
-const sql = require('mssql/msnodesqlv8');
 const db = require('./config/db.js');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/db.js');
 const post = require('./config/Posts.js');
+const models = require('./models/dizimo-posts.js');
 
 const app = express();
 const port = '3000';
@@ -52,11 +52,15 @@ app.post('/',(req,res)=>{
 });
 
 
-
-
 app.get('/dizimo',(req,res)=>{
-    try{
-    (async ()=>{
+    
+    /*var select = models.selectDizimista().then(
+        (result)=>{
+            console.log(result)
+            return result})
+    
+    res.render('dizimo/dizimo',  {dizimista: select, header:true})*/
+    async function selectDizimista(){
         var query = await post.dizimista.findAll({
             raw: true,
             attributes:['id', 'nome', 'endereco.logradouro', 'endereco.bairro', 'contato.celular'],
@@ -66,16 +70,15 @@ app.get('/dizimo',(req,res)=>{
                 model: post.contato, attributes:['celular']
             }],
         });
-
         res.render('dizimo/dizimo',  {dizimista: query, header:true})
-    })();
     }
-    catch(err){
-        console.log(err)  
-        res.render('dizimo/dizimo', {header: true})
-    }
+    selectDizimista()
 });
 
+
+app.post('/dizimo',(req, res)=>{
+    res.render('dizimo/dizimo', {header: true})
+});
 
 // rotas ----------------------------------------
 

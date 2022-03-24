@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style/cadastrar-dizimista.css"></style>
 
-<form method="post" class="form-todo">
+<form method="post" class="form-todo" action="/dizimo">
 <div id="dados-pessoais" class="container">
     
     <h5 id="infos-titulo">Informações pessoais</h5>
@@ -28,10 +28,10 @@
  
         <div class="col-3">
             <label for="estado-civil" class="form-label">Estado civil</label>
-            <select name="estado-civil" class="form-control" required>
+            <select id="estado-civil" name="estado-civil" class="form-control" required>
                 <option value="nulo"></option>
-                <option value="Solteiro">Solteiro</option>
-                <option value="Casado">Casado</option>
+                <option value="solteiro">Solteiro</option>
+                <option value="casado">Casado</option>
                 <option value="divorciado">Divorciado</option>
                 <option value="amasiado">Amasiado</option>
             </select>
@@ -135,8 +135,7 @@
 <script type="text/javascript" src="js/cad-dizimista-scr.js">
 
 
-    var estado = document.querySelector("#estado-civil");
-    alert("valor: "+estado.value)
+var estado = document.querySelector("#estado-civil");
 
 carregaDiv();
 </script>

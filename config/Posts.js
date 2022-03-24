@@ -119,6 +119,9 @@ const login = db.sequelize.define('login',{
     }
 },{freezeTableName: true})
 
+
+
+
 dizimista.belongsTo(endereco,{foreignKey:'id',target:'idEndereco'})
 dizimista.belongsTo(contato,{foreignKey:'id',target:'idContato'})
 usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'})
