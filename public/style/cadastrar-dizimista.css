@@ -1,0 +1,39 @@
+
+input[type="txt"],[type="date"], [type="select"]{
+    animation: exibe .5s;
+}
+
+
+
+label{
+    animation: exibe .3s;
+}
+
+
+#dados-pessoais{
+    border: 0px;
+    box-shadow: 0 0 1em black;
+    border-radius: 10px;
+    background-color: #ccc;
+    display:grid;
+    align-items:center;
+
+    margin-top:2vh;
+
+    width:120vh;
+    height:150vh;
+}
+
+.div-casamento{
+    display: none;
+}
+
+@keyframes exibe {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+    
+}

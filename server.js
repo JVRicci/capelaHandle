@@ -54,10 +54,6 @@ app.post('/',(req,res)=>{
 
 
 
-app.get('/inicio', (req, res)=>{
-    res.render('inicio', {header:true});
-});
-
 app.get('/dizimo',(req,res)=>{
     try{
     (async ()=>{
@@ -71,7 +67,6 @@ app.get('/dizimo',(req,res)=>{
             }],
         });
 
-        console.log( query)
         res.render('dizimo/dizimo',  {dizimista: query, header:true})
     })();
     }
@@ -82,10 +77,24 @@ app.get('/dizimo',(req,res)=>{
 });
 
 
+// rotas ----------------------------------------
+
+
+
+
+app.get('/inicio', (req, res)=>{
+    res.render('inicio', {header:true});
+});
+
+
 
 app.get('/', (req,res)=>{
     res.render('login');
 });
+
+app.get('/cadastrar-dizimista', (req, res)=>{
+    res.render('dizimo/cadastrar-dizimista', {header:true});
+})
 
 app.listen(port, (req,res)=>{
     console.log('Server aberto na porta:'+port+'\n http://localhost:3000');

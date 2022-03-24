@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="style/cadastrar-dizimista.css"></style>
+
+<form method="post" class="form-todo">
+<div id="dados-pessoais" class="container">
+    
+    <h5 id="infos-titulo">Informações pessoais</h5>
+
+    <div class="row">
+
+        <div class="col-10">
+            <label for="nome-text" class="form-label">Nome do Dizimista</label>
+            <input type="txt" name="nome-txt" placeholder="Nome" class="form-control"  required>
+        </div>
+
+    </div>
+
+    <div class="row">
+        
+        <div class="col-4">
+            <label for="nascimento-date" class="form-label">Data de nascimento</label>
+            <input type="date" name="nascimento-date" placeholder="Data de nascimento" class="form-control"required>
+        </div>
+
+        <div class="col-3">
+            <label for="cpf-txt" class="form-label">CPF</label>
+            <input type="txt" name="cpf-txt" placeholder="CPF" class="form-control" required>
+        </div>
+ 
+        <div class="col-3">
+            <label for="estado-civil" class="form-label">Estado civil</label>
+            <select name="estado-civil" class="form-control" required>
+                <option value="nulo"></option>
+                <option value="Solteiro">Solteiro</option>
+                <option value="Casado">Casado</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="amasiado">Amasiado</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="div-casamento" >
+    <div class="row" >
+
+        <div class="col-10">
+            <label for="conjuge-txt" class="form-label">Conjuge</label>
+            <input type="txt" name="conjuge-txt" class="form-control" placeholder="Conjuge">
+        </div>
+
+        <div class="col-6">
+            <label for="tipo-casamento" class="form-label">Tipo de casamento</label>
+            <select name="tipo-casamento" class="form-control">
+                <option value="nulo"></option>
+                <option value="igreja">Igreja</option>
+                <option value="civil">Civil</option>
+                <option value="ambos">Ambos</option>
+            </select>
+        </div>
+
+        <div class="col-4">
+            <label for="conjuge-date" class="form-label">Nascimento do conjuge</label>
+            <input type="date" name="conjuge-date" placeholder="Nascimento" class="form-control">
+        </div>
+
+    </div>
+    </div>
+
+    <hr>
+
+    <h5>Endereço</h5>
+
+    <div class="row">
+
+        <div class="col-5">
+            <label for="endereco-txt" class="form-label">Endereço</label>
+            <input type="text" name="endereco-txt" class="form-control" placeholder="Endereço" required>
+        </div>
+
+        <div class="col-3">
+            <label for="uf-txt" class="form-label">CEP</label>
+            <input type="text" name="cep-txt" class="form-control" placeholder="CEP" required>
+        </div>
+
+        <div class="col-2">
+            <label for="numero-txt" class="form-label">Número</label>
+            <input type="number" name="numero-txt" class="form-control" required>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-5">
+            <label for="cidade-txt" class="form-label">Cidade</label>
+            <input type="text" name="cidade-txt" class="form-control" placeholder="Cidade" required>
+        </div>        
+
+        <div class="col-3">
+            <label for="bairro-txt" class="form-label">Bairro</label>
+            <input type="text" name="bairro-txt" class="form-control" placeholder="Bairro" required>
+        </div>
+
+        <div class="col-2">
+            <label for="uf-txt" class="form-label">UF</label>
+            <input type="text" name="uf-txt" class="form-control" placeholder="CEP" required>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h5>Contato</h5>
+    <div class="row">
+        
+        <div class="col-5">
+            <label for="telefone-txt" class="form-label">Telefone</label>
+            <input type="text" name="telefone-txt" class="form-control" placeholder="Número" required>
+        </div>
+        <div class="col-5">
+            <label for="celular-txt" class="form-label">Celular</label>
+            <input type="text" name="celular-txt" class="form-control" placeholder="Número" required>
+        </div>
+    </div>
+
+    <hr>
+
+    <input name="cadastrar" type="submit" value="Cadastrar"  class="btn btn-dark" id="cadastrar-btn"/>
+
+</div>
+
+<hr>
+
+</form>
+
+<script type="text/javascript" src="js/cad-dizimista-scr.js">
+
+
+    var estado = document.querySelector("#estado-civil");
+    alert("valor: "+estado.value)
+
+carregaDiv();
+</script>
