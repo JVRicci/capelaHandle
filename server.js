@@ -1,11 +1,11 @@
+//imports de modulos
 const express = require('express')
-const path = require ('path')
 const { engine } = require ('express-handlebars');
-const db = require('./config/db.js');
 const bodyParser = require('body-parser');
-const sequelize = require('./config/db.js');
-const post = require('./config/Posts.js');
-const models = require('./models/dizimo-posts.js');
+
+//importações de rotas
+const rotasDizimo = require('./routes/dizimo-posts');
+const rotasLogin = require('./routes/login-rota');
 
 const app = express();
 const port = '3000';
@@ -24,61 +24,13 @@ app.use('/js', express.static(__dirname + '/public\js'))
 app.use('/views', express.static(__dirname + '/public/views'));
 
 
-app.post('/',(req,res)=>{
-    //carrega variaveis introduzidas pelo user nos campos
-    let nomeLog = req.body.login;
-    let senhaLog = req.body.senha;   
-
-    (async ()=>{
-        var query = await post.usuario.findOne({
-            raw: 1,
-            attributes: ['id', 'nome', 'funcao', 'login.login','login.senha'],
-            include:{
-                model: post.login, attributes: ['login', 'senha'],
-                where:{
-                    login: nomeLog, senha: senhaLog
-                }
-            },
-        })
-        if(query != null){
-            //res.session.login = login;
-            res.render('inicio', {nomeUser: query['nome'], header:true})
-        }
-        else{
-            res.render('login')
-        }
-    })();
-
-});
+app.post('/',rotasLogin.login);
 
 
-app.get('/dizimo',(req,res)=>{
-    
-    /*var select = models.selectDizimista().then(
-        (result)=>{
-            console.log(result)
-            return result})
-    
-    res.render('dizimo/dizimo',  {dizimista: select, header:true})*/
-    async function selectDizimista(){
-        var query = await post.dizimista.findAll({
-            raw: true,
-            attributes:['id', 'nome', 'endereco.logradouro', 'endereco.bairro', 'contato.celular'],
-            include:[{ 
-                model: post.endereco, attributes:['logradouro', 'bairro']
-            },{
-                model: post.contato, attributes:['celular']
-            }],
-        });
-        res.render('dizimo/dizimo',  {dizimista: query, header:true})
-    }
-    selectDizimista()
-});
+app.get('/dizimo', rotasDizimo.pesquisa);
 
 
-app.post('/dizimo',(req, res)=>{
-    res.render('dizimo/dizimo', {header: true})
-});
+app.post('/dizimo',rotasDizimo.cadastrar);
 
 // rotas ----------------------------------------
 
