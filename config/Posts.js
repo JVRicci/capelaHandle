@@ -122,8 +122,8 @@ const login = db.sequelize.define('login',{
 
 
 
-dizimista.belongsTo(endereco,{foreignKey:'id',target:'idEndereco'})
-dizimista.belongsTo(contato,{foreignKey:'id',target:'idContato'})
+dizimista.belongsTo(endereco,{foreignKey:'idEndereco',target:'id'})
+dizimista.belongsTo(contato,{foreignKey:'idContato',target:'id'})
 usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'})
 
 

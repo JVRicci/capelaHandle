@@ -7,6 +7,7 @@ var i = setInterval(()=>{
 
     
     loadDiv.style.display = "none";
-    corpo.style.display = "block";
+    corpo.style.display = "inline";
     
 },2000);
+

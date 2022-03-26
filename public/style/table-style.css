@@ -1,0 +1,10 @@
+tr:hover{
+    animation: destaque .3s forwards;
+}
+
+@keyframes destaque{
+    to{
+        color:rgb(255, 255, 255);
+        background-color: grey;
+    }
+}

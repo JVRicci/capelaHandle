@@ -24,22 +24,19 @@ app.use('/js', express.static(__dirname + '/public\js'))
 app.use('/views', express.static(__dirname + '/public/views'));
 
 
+
 app.post('/',rotasLogin.login);
-
-
-app.get('/dizimo', rotasDizimo.pesquisa);
-
-
-app.post('/dizimo',rotasDizimo.cadastrar);
-
-// rotas ----------------------------------------
-
-
-
 
 app.get('/inicio', (req, res)=>{
     res.render('inicio', {header:true});
 });
+
+
+app.get('/dizimo', rotasDizimo.pesquisa);
+
+app.post('/dizimo',rotasDizimo.cadastrarDizimista);
+
+// rotas ----------------------------------------
 
 
 

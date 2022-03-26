@@ -1,5 +1,6 @@
 <link rel='stylesheet' type='text/css' href='style\dizimo.css'>
 <link rel='stylesheet' type='text/css' href='style\pesquisa.css'>
+<link rel='stylesheet' type='text/css' href='style\table-style.css'>
 
 <div class="principal">
 <class class="div-pesquisa">
@@ -8,7 +9,7 @@
 
       <div class="dizimista-div">
 
-          <table class="table ">
+          <table class="table" id="dizimistas">
               <thead class="thead-dark">
                   <tr>
                       <th scope="col"></th>
@@ -21,7 +22,7 @@
               </thead>
               <tbody data-toggle="modal" data-target="#modal-dizimo">
                 {{#each dizimista}}
-                  <tr>
+                  <tr id="dizimistaLinha" >
                       <td><radio class="radio"></radio></td>
                       <td>{{id}}</td>
                       <td>{{nome}}</td>
@@ -47,7 +48,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Dizimos registrados por {{nome}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Dizimos registrados por {{dizimista.nome}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -55,21 +56,18 @@
               <div class="modal-body">
 
                 <form method="post">
-                  <input type="text" placeholder="Dia" required>
-                  <input type="text" placeholder="Valor" required>
-                  <button type="submit" class="btn btn-primary">Salvar</button>
+                      <input type="date" name="data" placeholder="Dia" required> 
+                      <input type="text" name="valorTxt" placeholder="Valor" required>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
                 <br>
 
-                <table class="table">
-                  <thead>
+                <table class="table ">
+                <thead class="thead-dark">
                     <tr>
-                      <td>
-                        Dia
-                      </td>
-                      <td>
-                        Valor
-                      </td>
+                        <th scope="col"></th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Quantia</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -102,6 +100,9 @@
   <!--Imports de scripts-->
   <script src="../js/dizimo-modal.js">
       exibecadastro();
+  </script>
+  <script src="../js/pesq-dizimista.js">
+    nomeDizimista();
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

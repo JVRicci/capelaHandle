@@ -13,13 +13,15 @@ var pesquisa = router.get('/dizimo',(req, res)=>{
                 model: post.endereco, attributes:['logradouro', 'bairro']
             },{
                 model: post.contato, attributes:['celular']
-            }],
+            }],order:[['id', 'ASC']]
         });
         res.render('dizimo/dizimo',{header: true, dizimista:query})
     })();
 })
 
-var cadastrar = router.post('/dizimo',(req, res)=>{
+
+
+var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
 
     (async()=>{
         var enderecoIns = await post.endereco.create({
@@ -37,7 +39,6 @@ var cadastrar = router.post('/dizimo',(req, res)=>{
             email: req.body.emailTxt
         });
 
-        
         var dizimistaIns= await post.dizimista.create({
 
             idContato: await post.contato.max('id'),
@@ -71,4 +72,17 @@ var cadastrar = router.post('/dizimo',(req, res)=>{
     })()
 })
 
-module.exports = {pesquisa, cadastrar}
+var cadastrarDizimo=router.post('/dizimo', (req,res)=>{
+    (async ()=>{
+        var dizimo =await post.dizimos.create({
+            idDizimista: dizimista,
+            qtdRecebida: req.body.valorTxt,
+            dataRecebimento: req.body.data,
+        })
+    })
+})
+
+
+
+
+module.exports = {pesquisa, cadastrarDizimista}
