@@ -1,9 +1,9 @@
-function nomeDizimista(){
-    let tabela = document.getElementsByTagName("tbody");
-    console.log(tabela.childNodes);
-    
-    tabela.addEventListener('click',()=>{
-        let nome = this.find(':nth-child(1)').text();
-        console.log(nome)
-    },false)
-}
+$('#dizimistas tbody').on('click',()=>{
+    var nome = $(this).closest('tr').find('td:eq(0)').text();
+    alert(nome)
+    //$("#dizimosTitulo").append(" Juaum")
+})
+
+$('#salvar').on('click', ()=>{
+    alert("ok")
+})

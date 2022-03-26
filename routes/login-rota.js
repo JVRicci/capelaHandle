@@ -2,6 +2,8 @@ const post = require('../config/Posts.js');
 const express = require('express');
 const router = express.Router();
 
+var login
+
 var login = router.post('/',(req,res)=>{
     //carrega variaveis introduzidas pelo user nos campos
     let nomeLog = req.body.login;
@@ -19,17 +21,18 @@ var login = router.post('/',(req,res)=>{
             },
         })
         if(query != null){
-            //res.session.login = query['nome'];
-            res.render('inicio', {nomeUser: query['nome'], header:true})
+            
+            req.session.login = query['nome'];
+            res.render('inicio', {nomeUser: req.session.login, header:true})
+            
         }
         else{
+            
+            req.session.login = null;
             res.render('login')
         }
     })();
 
 });
-
-
-
 
 module.exports={login}

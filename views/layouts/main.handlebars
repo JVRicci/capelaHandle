@@ -10,10 +10,12 @@
    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
    crossorigin="anonymous"/>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    
 </head>
 
-<body onload="i">
+<body>
 
     {{#if header}}
         <header>
@@ -43,7 +45,9 @@
                 <li><a href="/">Doações </a></li>
                 <li><a href="/">Eventos </a></li>            
                 <li><a href="/">Contas a pagar </a></li>
-                <li class="userName"><a href="/">{{nomeUser}} </a></li>
+                <li class="userName"><a href="/inicio">{{nomeUser}} </a>
+                    <ul><a href="/">Sair</a></ul>
+                </li>
 
             </ul>
         </nav>
@@ -53,7 +57,5 @@
     {{{body}}}
     
     <script type="text/javascript" src="js/mobile-navbar.js"></script>
-    
-    <script type="text/javascript" src="js/carregarInicio.js"></script>
 </body>
 </html>
