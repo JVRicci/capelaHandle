@@ -20,6 +20,7 @@
     box-shadow: 0 0 10px;
     margin-left: auto;
     margin-right: auto;
+    animation: decrease 2s;
 }
 .pesquisa-text:hover{
     animation:expand 2s forwards;
@@ -30,19 +31,27 @@
     
 }
 
-
-
-
 @keyframes expand{
     from{
         width:30vh;
-        opacity: 0;
         transform: translate(0px);
     }
     to{
         text-align: center;
-        opacity: 1;
         width:135vh;
         transform: translate(1);
+    }
+}
+
+@keyframes decrease{
+    from{
+        width:135vh;
+        transform: translate(1);
+    }
+    to{
+        
+        text-align: center;
+        width:30vh;
+        transform: translate(0px);
     }
 }

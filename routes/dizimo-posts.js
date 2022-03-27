@@ -58,24 +58,12 @@ var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
             nascConjuge: req.body.conjugeDate,
             ativo: 's'
         });
-        
-        (async()=>{
-            var query = await post.dizimista.findAll({
-                raw: true,
-                attributes:['id', 'nome', 'endereco.logradouro', 'endereco.bairro', 'contato.celular'],
-                include:[{ 
-                    model: post.endereco, attributes:['logradouro', 'bairro']
-                },{
-                    model: post.contato, attributes:['celular']
-                }],
-            });
-            res.render('dizimo/dizimo',{header: true, dizimista:query})
-        })();
-        
+
+        res.redirect('/dizimo');
         
     })()
-    
 })
+
 
 var cadastrarDizimo=router.post('/dizimo', (req,res)=>{
     (async ()=>{
