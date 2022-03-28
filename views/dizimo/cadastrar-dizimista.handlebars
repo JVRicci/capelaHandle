@@ -23,7 +23,8 @@
 
         <div class="col-3">
             <label for="cpfTxt" class="form-label">CPF</label>
-            <input type="txt" name="cpfTxt" placeholder="CPF" class="form-control" required>
+            <input type="txt" name="cpfTxt" oninput="mascaraCpf(this)"
+             placeholder="CPF" maxlength="11" class="form-control" required>
         </div>
  
         <div class="col-3">
@@ -50,7 +51,7 @@
         <div class="col-6">
             <label for="tipoCasamento" class="form-label">Tipo de casamento</label>
             <select name="tipoCasamento" class="form-control">
-                <option value="nulo"></option>
+                <option value="nenhum">Nenhum</option>
                 <option value="igreja">Igreja</option>
                 <option value="civil">Civil</option>
                 <option value="ambos">Ambos</option>
@@ -78,7 +79,8 @@
 
         <div class="col-3">
             <label for="cepTxt" class="form-label">CEP</label>
-            <input type="text" name="cepTxt" class="form-control" placeholder="CEP" required>
+            <input type="text" name="cepTxt" oninput="mascaraCep(this)"
+            class="form-control" placeholder="CEP" required>
         </div>
 
         <div class="col-2">
@@ -114,11 +116,13 @@
         
         <div class="col-5">
             <label for="telefoneTxt" class="form-label">Telefone</label>
-            <input type="text" name="telefoneTxt" class="form-control" placeholder="Número" required>
+            <input type="text" name="telefoneTxt" oninput="mascaraTelefone(this)"
+            class="form-control" placeholder="Número" required>
         </div>
         <div class="col-5">
             <label for="celularTxt" class="form-label">Celular</label>
-            <input type="text" name="celularTxt" class="form-control" placeholder="Número" required>
+            <input type="text" name="celularTxt" oninput="mascaraCelular(this)"
+            class="form-control" placeholder="Número" required>
         </div>
     </div>
 

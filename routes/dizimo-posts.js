@@ -22,10 +22,24 @@ var pesquisa = router.get('/dizimo',(req, res)=>{
     }else{
         res.redirect('/');
     }
+
+    
 })
 
 
 var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
+
+    try{
+        var casamentoTxt = String(req.body.tipoCasamento);
+        var conjugeTxt = String(req.body.conjugeTxt)
+        var nascConjTxt = req.body.conjugeDate;
+
+        if (String(req.body.tipoCasamento) == "" || String(req.body.conjugeTxt)=="" || 
+        req.body.conjugeDate==""){
+            var casamentoTxt = "nulo"
+            var conjugeTxt = "nulo"
+            var nascConjTxt = "'1000-01-01 00:00:00.000 +00:00'";
+        }
 
         (async()=>{
         var enderecoIns = await post.endereco.create({
@@ -52,16 +66,20 @@ var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
             cpf: String(req.body.cpfTxt),
             nascimento: req.body.nascimentoDate,
 
-            casamento: String(req.body.tipoCasamento),
+            casamento: casamentoTxt,
             estadoCivil: String(req.body.estadoCivil),
-            conjuge: String(req.body.conjugeTxt),
-            nascConjuge: req.body.conjugeDate,
+            conjuge: conjugeTxt,
+            nascConjuge: nascConjTxt,
             ativo: 's'
         });
 
         res.redirect('/dizimo');
         
     })()
+    }
+    catch(err){
+        console.log(err)
+    }
 })
 
 
