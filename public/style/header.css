@@ -28,7 +28,7 @@ a {
     align-items: center;
     background: #23232e;
     height: 10vh;
-    box-shadow: 20px;
+    box-shadow: 10px;
   }
   
   
@@ -46,7 +46,7 @@ a {
   
   .mobile-menu {
     position: absolute;
-    top:2vh;
+    top:1vh;
     right:10px;
     display: none;
     cursor: pointer;
@@ -67,7 +67,7 @@ a {
     }
     .nav-list {
       position: absolute;
-      top: 8vh;
+      top: 4vh;
       right: 0;
       width: 50vw;
       height: 92vh;

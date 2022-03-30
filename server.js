@@ -41,7 +41,11 @@ app.get('/inicio', (req, res)=>{
 
 app.get('/dizimo', rotasDizimo.pesquisa);
 
+app.get('/dizimista:nome', rotasDizimo.dizimistaPage)
+
 app.post('/dizimo',rotasDizimo.cadastrarDizimista);
+
+app.post('/dizimista:nome', rotasDizimo.dizimistaPost)
 
 // rotas ----------------------------------------
 

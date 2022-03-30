@@ -51,18 +51,18 @@ const dizimista = db.sequelize.define ('dizimista', {
 },{ freezeTableName: true });
 
 
-const dizimos = db.sequelize.define('dizimos',{
+const dizimo = db.sequelize.define('dizimo',{
     idDizimista:{
         type: db.Sequelize.INTEGER,
         allowNull: true,
     },
     qtdRecebida:{
-        type: db.Sequelize.REAL
+        type: db.Sequelize.STRING,
     },
     dataRecebimento:{
         type: db.Sequelize.DATE
     }
-});
+},{freezeTableName: true});
 
 
 const endereco = db.sequelize.define('endereco',{
@@ -125,9 +125,10 @@ const login = db.sequelize.define('login',{
 dizimista.belongsTo(endereco,{foreignKey:'idEndereco',target:'id'})
 dizimista.belongsTo(contato,{foreignKey:'idContato',target:'id'})
 usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'})
+dizimo.belongsTo(dizimista,{foreignKey:'idDizimista', target:'id'})
 
 
 
-module.exports= {dizimista, dizimos, endereco, contato, login, usuario}
+module.exports= {dizimista, dizimo, endereco, contato, login, usuario}
 
 

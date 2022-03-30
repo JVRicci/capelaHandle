@@ -4,7 +4,8 @@ const sequelize = new Sequelize ('bancoCapela', 'JVvsRicci', 'ozy123',{
     host:'DESKTOP-B1DL0LN',
     dialect: 'mssql',
     define: {
-        timestamps: false
+        timestamps: false,
+        
     }
 },
 );

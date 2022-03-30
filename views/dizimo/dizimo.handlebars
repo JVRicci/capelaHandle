@@ -4,7 +4,9 @@
 
 <div class="principal">
 <class class="div-pesquisa">
-              <input type="text" class="pesquisa-text" placeholder="Pesquisar Dizimista"/>
+        <input type="text" class="pesquisa-text" placeholder="Pesquisar Dizimista" value={{pesquisaTxt}}>
+        
+        </input>
       </class>
 
       <div class="dizimista-div">
@@ -20,12 +22,12 @@
                       <th scope="col">Telefone</th>
                   </tr>
               </thead>
-              <tbody data-toggle="modal" data-target="#modal-dizimo">
+              <tbody >
                 {{#each dizimista}}
-                  <tr id="row">
-                      <td><radio class="radio"></radio></td>
+                  <tr id="row" >
+                      <td></td>
                       <td>{{id}}</td>
-                      <td>{{nome}}</td>
+                      <td ><a href="/dizimista{{nome}}">{{nome}}</a></td>
                       <td>{{logradouro}}</td>
                       <td>{{bairro}}</td>
                       <td>{{celular}}</td>
@@ -41,59 +43,7 @@
 
       </div>
       
-      <!--Modal de Verifica dizimo-->
-
-        <!-- Modal -->
-        <div class="modal fade" id="modal-dizimo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="dizimosTitulo">Dizimos registrados por {{nome}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-
-                <form method="post">
-                      <input type="date" name="data" placeholder="Dia" required> 
-                      <input type="text" name="valorTxt" placeholder="Valor" required>
-                    <button type="submit" class="btn btn-primary" >Salvar</button>
-                </form>
-                <br>
-
-                <table class="table ">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Quantia</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {{#each dizimo}}
-                      <tr>
-                        <td>
-                          {{dia}}
-                        </td>
-                        <td>
-                          {{quantidade}}
-                        </td>
-                      </tr>
-                    {{/each}}
-                  </tbody>
-                </table>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fecha</button>
-                <button type="button" class="btn btn-primary" id="salvar">Salvar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Fim do modal de cadastro-->
+      
        
 
 

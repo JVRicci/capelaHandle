@@ -2,7 +2,9 @@ const post = require('../config/Posts.js');
 const express = require('express');
 const router = express.Router();
 const db = require("../config/db.js");
+const { query } = require('express');
 
+// consultar Dizimistas
 var pesquisa = router.get('/dizimo',(req, res)=>{
 
     if(req.session.login){
@@ -14,19 +16,21 @@ var pesquisa = router.get('/dizimo',(req, res)=>{
                     model: post.endereco, attributes:['logradouro', 'bairro']
                 },{
                     model: post.contato, attributes:['celular']
-                }],order:[['id', 'ASC']]
+                }]
             });
             res.render('dizimo/dizimo',{header: true, dizimista:query, nomeUser:req.session.login})
         })();
+
+
         
     }else{
         res.redirect('/');
     }
 
-    
 })
 
 
+// Cadastrar Dizimista
 var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
 
     try{
@@ -83,17 +87,54 @@ var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
 })
 
 
-var cadastrarDizimo=router.post('/dizimo', (req,res)=>{
-    (async ()=>{
-        var dizimo =await post.dizimos.create({
-            idDizimista: dizimista,
-            qtdRecebida: req.body.valorTxt,
-            dataRecebimento: req.body.data,
+
+
+// Cadastrar Dizimo
+
+var dizimistaPage = router.get("/dizimista:nome", (req,res)=>{
+    var nome = req.params.nome;
+    var idDiz
+    (async(nome)=>{
+
+        var query = await post.dizimista.findOne({
+            raw:true,
+            attributes:['id', 'nome', 'cpf', 'nascimento', 'casamento', 'estadoCivil', 'conjuge', 'nascConjuge', 'ativo',
+                        'endereco.logradouro', 'endereco.numero', 'endereco.bairro', 'endereco.cidade', 
+                        'contato.telefone', 'contato.celular'],
+            include:[{
+                model: post.endereco, attribute:['logradouro', 'numero', 'bairro', 'cidade']
+            },{
+                model: post.contato, attribute:['telefone', 'celular']
+            }],
+            where:{nome: req.params.nome}
+        });
+
+        idDiz = await query.id
+
+        var dizimos = await post.dizimo.findAll({
+            raw:true,
+            atribute:['qtdRecebida', 'dataRecebimento'],
+            where:{idDizimista: idDiz}
+            
         })
-    })
+        res.render("dizimo/dizimista", {header: true, query, dizimosTab:dizimos , nomeUser:req.session.login})    
+    })()
+
+})
+
+var dizimistaPost = router.post("/dizimista:nome", (req, res)=>{
+    var fullUrl = req.protocol + '://' + req.get('host', req.session.login) + req.originalUrl;
+    (async()=>{
+        var insert = await post.dizimo.create({
+            idDizimista: req.body.idTxt,
+            qtdRecebida: req.body.valorTxt,
+            dataRecebimento: req.body.data
+        })
+
+    res.redirect(fullUrl)
+    })()
 })
 
 
 
-
-module.exports = {pesquisa, cadastrarDizimista}
+module.exports = {pesquisa, cadastrarDizimista, dizimistaPage, dizimistaPost}

@@ -1,0 +1,71 @@
+
+p, h6{
+    color:white;
+}
+
+p{
+    font-size: 12px;
+}
+
+hr{
+    box-shadow:0 0 7px white;
+    border-top: 1px solid #ccc
+}
+
+input [type="text"]{
+    box-shadow: 0 0 5px inset;
+    border-radius: 5px;
+}
+
+.modal-header{
+    background: #343444;
+    color: white;
+}
+
+.modal-body{
+    display:grid;
+}
+
+.modal-dizimo{
+    border-radius: 10px;
+}
+
+#div-principal{
+    margin-left: 5vh;
+}
+
+#idDiz{
+    display:none;
+}
+#dados-dizimista{
+    background: #343444;
+    border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 0 0px 7px inset rgb(190, 190, 190);
+
+    margin-top: 3vh;
+    margin-left: 10vh;
+    padding: 2vh;
+    padding-bottom: 0vh;
+
+    width: 50vh;
+}
+
+#tabela-dizimo{
+    background: white;
+    width: 50vh;
+    height: 70vh;
+    margin-left: 10vh;
+    margin-top: 3vh;
+    border-radius: 10px;
+    box-shadow: 0 0 7px inset;
+}
+
+#dizimo-btn{
+    
+    margin-left: 25vh;
+}
+
+
+
+
