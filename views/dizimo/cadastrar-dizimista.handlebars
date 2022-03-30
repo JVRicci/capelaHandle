@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="style/cadastrar-dizimista.css"></style>
 
 <form method="POST" class="form-todo" action="/dizimo" >
+
 <div id="dados-pessoais" class="container">
     
+<section id="colId"></section>
+
     <h5 id="infos-titulo">Informações pessoais</h5>
 
     <div class="row">
@@ -144,8 +147,12 @@
 
 <script type="text/javascript" src="js/cad-dizimista-scr.js">
 
-
 var estado = document.querySelector("#estado-civil");
 
 carregaDiv();
 </script>
+
+
+<script type="text/javascript" src="js/cadastro-masks.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>

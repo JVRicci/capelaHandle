@@ -1,16 +1,11 @@
-var linha = $('#tabela-dizimo').length;
 
-var semResult = '<tr><td></td><td>Nenhum registro</td></tr>'
+$(document).ready(function(){
+    $('#valorTxt').mask('000.000.000.000.000,00', {reverse: true});
+});     
 
-if(linha ==1){
-    $('#tabela-dizimo').append(semResult);
-}
-else{
-}
+
 
 $("#salvar").on('click', ()=>{
     if($('valorTxt').text()!="" && $('data').text()!="dd/mm/aaaa")
     alert("Dizimo registrado com sucesso!")
 })
-
-

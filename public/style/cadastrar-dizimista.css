@@ -3,25 +3,33 @@ input[type="txt"],[type="date"], [type="select"]{
     animation: exibe .5s;
 }
 
-
+#colId{
+    background-color:rgb(53, 53, 53);
+    border: 1px solid;
+    height:110vh;
+    width:12vh;
+    right:18vh;
+    position:absolute;
+    margin-top:-3vh;
+}
 
 label{
     animation: exibe .3s;
 }
-
 
 #dados-pessoais{
     border: 0px;
     box-shadow: 0 0 1em black;
     border-radius: 10px;
     background-color: #ccc;
-    display:grid;
+    display: block;
     align-items:center;
+    padding: 3vh;
 
     margin-top:2vh;
 
-    width:120vh;
-    height:150vh;
+    width:130vh;
+    height:110vh;
 }
 
 .div-casamento{

@@ -20,6 +20,7 @@
 
 .dizimista-div table {
     background-color: white;
+    border-top: none;
     border-radius: 20px ;
     margin-bottom: 50px;
     width: 138vh;
