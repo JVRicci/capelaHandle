@@ -4,13 +4,12 @@
 
 <div id="dados-pessoais" class="container">
     
-<section id="colId"></section>
 
     <h5 id="infos-titulo">Informações pessoais</h5>
 
     <div class="row">
 
-        <div class="col-10">
+        <div class="col-11">
             <label for="nome-text" class="form-label">Nome do Dizimista</label>
             <input type="txt" name="nomeTxt" placeholder="Nome" class="form-control"  required>
         </div>
@@ -24,9 +23,9 @@
             <input type="date" name="nascimentoDate" placeholder="Data de nascimento" class="form-control"required>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
             <label for="cpfTxt" class="form-label">CPF</label>
-            <input type="txt" name="cpfTxt" oninput="mascaraCpf(this)"
+            <input type="txt" name="cpfTxt" id="cpfTxt"
              placeholder="CPF" maxlength="11" class="form-control" required>
         </div>
  
@@ -46,7 +45,7 @@
     <div class="div-casamento" >
     <div class="row" >
 
-        <div class="col-10">
+        <div class="col-11">
             <label for="conjugeTxt" class="form-label">Conjuge</label>
             <input type="txt" name="conjugeTxt" class="form-control" placeholder="Conjuge">
         </div>
@@ -61,8 +60,8 @@
             </select>
         </div>
 
-        <div class="col-4">
-            <label for="conjuge-date" class="form-label">Nascimento do conjuge</label>
+        <div class="col-5">
+            <label for="conjuge-date" class="form-label">Data de Nascimento</label>
             <input type="date" name="conjugeDate" placeholder="Nascimento" class="form-control">
         </div>
 
@@ -80,15 +79,15 @@
             <input type="text" name="enderecoTxt" class="form-control" placeholder="Endereço" required>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
             <label for="cepTxt" class="form-label">CEP</label>
-            <input type="text" name="cepTxt" oninput="mascaraCep(this)"
+            <input type="text" name="cepTxt"  id="cepTxt" 
             class="form-control" placeholder="CEP" required>
         </div>
 
         <div class="col-2">
             <label for="numeroTxt" class="form-label">Número</label>
-            <input type="number" name="numeroTxt" class="form-control" required>
+            <input type="txt" name="numeroTxt" class="form-control" required>
         </div>
 
     </div>
@@ -100,7 +99,7 @@
             <input type="text" name="cidadeTxt" class="form-control" placeholder="Cidade" required>
         </div>        
 
-        <div class="col-3">
+        <div class="col-4">
             <label for="bairroTxt" class="form-label">Bairro</label>
             <input type="text" name="bairroTxt" class="form-control" placeholder="Bairro" required>
         </div>
@@ -117,14 +116,14 @@
     <h5>Contato</h5>
     <div class="row">
         
-        <div class="col-5">
+        <div class="col-6">
             <label for="telefoneTxt" class="form-label">Telefone</label>
-            <input type="text" name="telefoneTxt" oninput="mascaraTelefone(this)"
+            <input type="text" name="telefoneTxt" id="telefoneTxt"
             class="form-control" placeholder="Número" required>
         </div>
         <div class="col-5">
             <label for="celularTxt" class="form-label">Celular</label>
-            <input type="text" name="celularTxt" oninput="mascaraCelular(this)"
+            <input type="text" name="celularTxt"  id="celularTxt" 
             class="form-control" placeholder="Número" required>
         </div>
     </div>
@@ -156,3 +155,4 @@ carregaDiv();
 <script type="text/javascript" src="js/cadastro-masks.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
