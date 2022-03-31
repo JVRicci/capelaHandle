@@ -4,6 +4,8 @@
 }
 header{
   animation: abrir .3s;
+  
+  box-shadow: 10px white inset;
 }
 
 a {
@@ -28,7 +30,6 @@ a {
     align-items: center;
     background: #23232e;
     height: 10vh;
-    box-shadow: 10px;
   }
   
   

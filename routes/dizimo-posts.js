@@ -21,8 +21,6 @@ var pesquisa = router.get('/dizimo',(req, res)=>{
             res.render('dizimo/dizimo',{header: true, dizimista:query, nomeUser:req.session.login})
         })();
 
-
-        
     }else{
         res.redirect('/');
     }
@@ -94,6 +92,8 @@ var cadastrarDizimista = router.post('/dizimo',(req, res)=>{
 var dizimistaPage = router.get("/dizimista:nome", (req,res)=>{
     var nome = req.params.nome;
     var idDiz
+
+    if(req.session.login){
     (async(nome)=>{
 
         var query = await post.dizimista.findOne({
@@ -118,7 +118,10 @@ var dizimistaPage = router.get("/dizimista:nome", (req,res)=>{
             
         })
         res.render("dizimo/dizimista", {header: true, query, dizimosTab:dizimos , nomeUser:req.session.login})    
-    })()
+        })()
+    }else{
+        res.redirect('/');
+    }
 
 })
 

@@ -8,6 +8,7 @@ const session = require("express-session");
 //importações de rotas
 const rotasDizimo = require('./routes/dizimo-posts');
 const rotasLogin = require('./routes/login-rota');
+const rotaDoacoes = require('./routes/doacoes-posts');
 
 const app = express();
 const port = '3000';
@@ -38,14 +39,23 @@ app.get('/inicio', (req, res)=>{
     else res.redirect('/');
 });
 
+//Rotas de dizimo
 
 app.get('/dizimo', rotasDizimo.pesquisa);
 
-app.get('/dizimista:nome', rotasDizimo.dizimistaPage)
+app.get('/dizimista:nome', rotasDizimo.dizimistaPage);
 
 app.post('/dizimo',rotasDizimo.cadastrarDizimista);
 
-app.post('/dizimista:nome', rotasDizimo.dizimistaPost)
+app.post('/dizimista:nome', rotasDizimo.dizimistaPost);
+
+//fim das rotas de dizimo
+
+//Rotas de doacoes
+
+app.get('/doacoes', rotaDoacoes.doacoes);
+
+//FIm das rotas de doacoes
 
 // rotas ----------------------------------------
 

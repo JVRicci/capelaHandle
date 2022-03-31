@@ -1,4 +1,6 @@
-
+body{
+    background: #3f3f53;
+}
 
 input[type="txt"],[type="date"], [type="select"]{
     animation: exibe .5s;
@@ -9,19 +11,19 @@ label{
     animation: exibe .3s;
 }
 
+
 #dados-pessoais{
     border: 0px;
-    box-shadow: 0 0 1em black inset;
+    box-shadow: 0 0 5px rgb(255, 255, 255) inset;
     border-radius: 10px;
-    background-color: #ccc;
+    color: white;
+    background-color: #23232e;
     padding: 3vh;
     margin-top:2vh;
     display: grid;
     width:100vh;
 
 }
-
-
 
 .row{
     padding-left: 5vh;
