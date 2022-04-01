@@ -19,9 +19,8 @@
 
 
 .dizimista-div table {
-    background-color: white;
     border-top: none;
-    border-radius: 20px ;
+    border-radius: 0 0 20px 20px ;
     margin-bottom: 50px;
     width: 138vh;
     margin-left: 1vh;

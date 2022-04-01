@@ -1,32 +1,153 @@
 <link rel="stylesheet" type="text/css" href="style\doacoes\doacoes.css">
-<link rel="stylesheet" type="text/css" href="style\pesquisa">
+<link rel='stylesheet' type='text/css' href='style\pesquisa.css'>
 
 
 <div id="div-principal" class="flex-container">
-    
-    <div id="pesquisar-div">
-        <input type="text" name="pesquisaTxt" placeholder="Pesquisar" class="form-control">
-    </div>
+    <div class="div-pesquisa">
+        <input type="text" class="pesquisa-text" placeholder="Pesquisar Doador" value={{pesquisaTxt}}>
+        
+        </input>
+      </div>
+
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-5">
             <div id="doador-div">
-                <h5>Doador</h5>
+
+                <table class="table table-dark">
+                    <thead >
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each doadores}}
+                        <tr>                  
+                            <th scope="row"></th>
+                            <th scope="row">{{id}}</th>
+                            <td scope="row">{{nome}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
             </div>
         </div>
         
-        <div class="col-6">
+        <div class="col-5">
             <div id="doacao-div">
-                <h5>Doação</h5>
+                
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Recebimento</th>
+                        </tr>
+                    </thead>
+                </table>
+
             </div>
         </div>
     </div>
-    <div class="row">
-        <div Class="col-5">
-            <button value="cadastrar" class="btn btn-dark">Cadastrar</button> 
+    <div class="row" id="btnDiv">
+        <div class="col-1"></div>
+        <div Class="col-6">
+            <button value="cadastrar" class="btn btn-dark"
+            data-toggle="modal" data-target="#doadorModal">
+            Registrar Doador</button> 
         </div>
-        <div Class="col-5">
-            <button value="cadastrar" class="btn btn-dark">Cadastrar</button>  
+        <div Class="col-3">
+            <button value="cadastrar" class="btn btn-dark"
+            data-toggle="modal" data-target="#doacaoModal">
+            Nova Doação</button>  
         </div>
     </div>
+</div>
+
+<!--Modals-->
+
+
+
+<!-- Modal doador -->
+<div class="modal fade" id="doadorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="doador-modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="regDoadorTitle">Registrar Doador</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+              <div class="row">
+                  <div class="col-12">
+                    <input type="text" class="form-control" id="doadorTxt" name="doadorTxt" placeholder="Nome do doador" required>
+                  </div>
+              </div>
+      </div>
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-dark">Registrar</button>
+            
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal doacao -->
+
+<div class="modal fade" id="doacaoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="doacao-modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="regDoacaoTitle">Registrar Doação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form method="POST">
+            <div class="flex-container" id="formDiv">
+                <div class="row">
+                    <div class="col-12">
+                    
+                    <label for="descricaoTxt">Descrição</label>
+                    <input type="text" class="form-control" id="doadorTxt" name="doadorTxt" placeholder="Descrição" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        
+                        <label for="destinoTxt">Destino</label>
+                        <input type="text" class="form-control" id="destinoTxt" name="destinoTxt" placeholder="Destino" required>
+                    </div>
+                    <div class="col-7">
+                        <label for="reecebimentoDate">Recebimento</label>
+                        <input type="date" name="recebimentoDate" class="form-control" id="recebimentoDate" required>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-dark">Registrar</button>
+                
+        </div>
+        </form>
+    </div>
+  </div>
 </div>

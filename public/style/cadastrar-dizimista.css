@@ -1,6 +1,4 @@
-body{
-    background: #3f3f53;
-}
+
 
 input[type="txt"],[type="date"], [type="select"]{
     animation: exibe .5s;
@@ -9,6 +7,12 @@ input[type="txt"],[type="date"], [type="select"]{
 
 label{
     animation: exibe .3s;
+}
+
+hr{
+    border: 1px solid white;
+    box-shadow: 0 0 3px white ;
+    border-radius: 5px;
 }
 
 
@@ -33,6 +37,8 @@ label{
 .div-casamento{
     display: none;
 }
+
+
 
 @keyframes exibe {
     from{

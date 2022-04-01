@@ -3,6 +3,22 @@
     --cor-secundaria--: #4c4c64
 }
 
+table{
+    border-radius: 10px;
+}
+
+.container{
+    display: flex;
+}
+
+.div-pesquisa{
+    height: 10vh;
+    width: 50vh;
+}
+
+
+
+
 #div-principal{
     color: white;
     box-shadow: 0 0 5px rgb(255, 255, 255) inset;
@@ -12,7 +28,7 @@
 
     background-color: var(--cor-secundaria--);
     height:85vh;
-    width: 130vh;
+    width: 145vh;
 
     padding:15px;
 
@@ -35,7 +51,7 @@
     width: 50vh;
 
     
-    box-shadow: 0 0 5px rgb(255, 255, 255) inset;
+    box-shadow: 0 0 3px rgb(255, 255, 255) inset;
 }
 
 #doacao-div{
@@ -47,10 +63,38 @@
     border-radius: 10px;
 
     height: 60vh;
-    width: 50vh;
-
+    width: 70vh;
     
     box-shadow: 0 0 3px rgb(255, 255, 255) inset;
 
 }
+
+#btnDiv{
+    padding-right: 5vh;
+}
+
+#doador-modal-content {
+    box-shadow: 0 0  3px rgb(255, 255, 255) inset;
+    border: none;
+    background-color: var(--cor-principal--);
+    color: white !important;
+
+    width:50vh;
+
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #doacao-modal-content {
+    box-shadow: 0 0 3px rgb(255, 255, 255) inset;
+    border: none;
+    background-color: var(--cor-principal--);
+    color: white !important;
+
+    width:70vh;
+    height:50vh;
+
+    justify-content: center;
+  }
 

@@ -4,7 +4,17 @@ const router = express.Router();
 const db = require ("../config/db.js");
 
 var doacoes = router.get('/doacoes', (req, res)=>{
-    res.render("doacoes/doacoes", {header: true, nomeUser:req.session.login});
+
+    (async()=>{
+        var doadorQuery = await post.doador.findAll({
+            row: true,
+            attributes: [ 'id', 'nome'],
+
+        })
+        console.log(doadorQuery)
+        res.render("doacoes/doacoes", {header: true, doadores: doadorQuery, nomeUser:req.session.login});
+    })()
+
 });
 
 module.exports={doacoes}

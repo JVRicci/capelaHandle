@@ -1,4 +1,4 @@
-body, html {height:100%; background:#5d5d75}
+body, html {height:100%; }
 
 
 p, h6{
@@ -42,7 +42,6 @@ input [type="text"]{
 #dados-dizimista{
     background: #343444;
     border-radius: 10px;
-    border: 1px solid;
     box-shadow: 0 0px 7px inset rgb(190, 190, 190);
 
     margin-top: 3vh;
@@ -54,12 +53,12 @@ input [type="text"]{
 }
 
 #tabela-dizimo{
-    background: white;
     width: 50vh;
-    height: 70vh;
+    height: 73vh;
     margin-left: 10vh;
-    margin-top: 5vh;
+    margin-top: 3vh;
     border-radius: 10px;
+    border: none;
     box-shadow: 0 0 7px inset;
 }
 
