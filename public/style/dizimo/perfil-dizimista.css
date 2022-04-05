@@ -1,3 +1,9 @@
+:root{
+    --cor-principal--: #23232e;
+    --cor-secundaria--: #4c4c64
+}
+
+
 body, html {height:100%; }
 
 
@@ -17,6 +23,17 @@ hr{
 input [type="text"]{
     box-shadow: 0 0 5px inset;
     border-radius: 5px;
+}
+
+#principal{
+    background: var(--cor-secundaria--);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding-bottom:20px;
+    border-radius: 15px;
+    width: 130vh;
+    box-shadow: 0 0 10px white inset;
 }
 
 .modal-header{

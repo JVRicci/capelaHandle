@@ -6,7 +6,7 @@ const sequelize = new Sequelize ('bancoCapela', 'JVvsRicci', 'ozy123',{
     define: {
         timestamps: false,
         
-    }
+    },
 },
 );
 

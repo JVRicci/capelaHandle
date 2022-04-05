@@ -55,6 +55,9 @@ app.post('/dizimista:nome', rotasDizimo.dizimistaPost);
 
 app.get('/doacoes', rotaDoacoes.doacoes);
 
+app.post('/doador', rotaDoacoes.doadorCad);
+app.post('/doacao', rotaDoacoes.doadorCad);
+
 //FIm das rotas de doacoes
 
 // rotas ----------------------------------------

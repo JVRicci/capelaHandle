@@ -1,10 +1,38 @@
-:root{
-    --cor-principal--: #23232e;
-    --cor-secundaria--: #4c4c64
-}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--cor-secundaria--); 
+    box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-secundaria--); 
+    box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+  }
+
+
+
 
 table{
     border-radius: 10px;
+}
+
+
+tbody tr:hover{
+    animation: destaque .3s forwards;
 }
 
 .container{
@@ -16,7 +44,9 @@ table{
     width: 50vh;
 }
 
-
+#doadorIdTxt{
+    display:none;
+}
 
 
 #div-principal{
@@ -36,7 +66,7 @@ table{
     margin-left: auto;
     margin-right: auto;
 
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #doador-div{
@@ -48,24 +78,30 @@ table{
     border-radius: 10px;
 
     height: 60vh;
-    width: 50vh;
-
+    width: 40vh;
     
     box-shadow: 0 0 3px rgb(255, 255, 255) inset;
+    
+    overflow-y:scroll;
+}
+
+#doador-div tbody{
+    cursor: pointer;
 }
 
 #doacao-div{
 
     background: var(--cor-principal--);
-    margin-right: 10px;
+    margin-right: 5px;
     padding: 10px;
 
     border-radius: 10px;
 
     height: 60vh;
-    width: 70vh;
+    width: 90vh;
     
     box-shadow: 0 0 3px rgb(255, 255, 255) inset;
+    overflow-y:scroll;
 
 }
 
@@ -97,4 +133,13 @@ table{
 
     justify-content: center;
   }
+
+  @keyframes destaque{
+      to{
+          background: var(--cor-secundaria--);
+          box-shadow: 0 0 3px rgb(255, 255, 255) inset;
+          opacity : 1;
+      }
+  }
+
 

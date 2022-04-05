@@ -21,10 +21,9 @@ hr{
     box-shadow: 0 0 5px rgb(255, 255, 255) inset;
     border-radius: 10px;
     color: white;
-    background-color: #23232e;
+    background-color: var(--cor-principal--);
     padding: 3vh;
     margin-top:2vh;
-    display: grid;
     width:100vh;
 
 }

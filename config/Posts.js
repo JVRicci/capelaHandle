@@ -89,12 +89,11 @@ const doacao = db.sequelize.define('doacao',{
     },
     descricao: {
         type: db.Sequelize.STRING,
-        allowNull:true
     },
     destino: {
         type: db.Sequelize.STRING,
     },
-    dataRecebimento: {
+    dataReceb: {
         type: db.Sequelize.DATE
     },
     tipoDoacao: {
@@ -161,11 +160,11 @@ const login = db.sequelize.define('login',{
 
 
 
-dizimista.belongsTo(endereco,{foreignKey:'idEndereco',target:'id'})
-dizimista.belongsTo(contato,{foreignKey:'idContato',target:'id'})
-usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'})
-dizimo.belongsTo(dizimista,{foreignKey:'idDizimista', target:'id'})
-
+dizimista.belongsTo(endereco,{foreignKey:'idEndereco',target:'id'});
+dizimista.belongsTo(contato,{foreignKey:'idContato',target:'id'});
+usuario.belongsTo(login,{foreignKey:'id',target:'idLogin'});
+dizimo.belongsTo(dizimista,{foreignKey:'idDizimista', target:'id'});
+doacao.belongsTo(doador,{foreignKey:'idDoador', target:'id'})
 
 
 module.exports= {dizimista, dizimo, 

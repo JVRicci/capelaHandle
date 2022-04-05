@@ -4,7 +4,6 @@
 }
 header{
   animation: abrir .3s;
-  
   box-shadow: 10px white inset;
 }
 
@@ -12,6 +11,7 @@ a {
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
+    
   }
   
   a:hover {
@@ -30,6 +30,7 @@ a {
     align-items: center;
     background: #23232e;
     height: 10vh;
+    
   }
   
   
