@@ -24,7 +24,9 @@
   }
 
 
-
+tr{
+    animation: linha .3s;
+}
 
 table{
     border-radius: 10px;
@@ -142,4 +144,12 @@ tbody tr:hover{
       }
   }
 
+  @keyframes linha{
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity:1
+      }
+  }
 
