@@ -6,6 +6,7 @@ const { query } = require('express');
 
 var doacoes = router.get('/doacoes', (req, res)=>{
 
+    if(req.session.login){
     (async()=>{
         var doadorQuery = await post.doador.findAll({
             raw: true,
@@ -19,6 +20,10 @@ var doacoes = router.get('/doacoes', (req, res)=>{
         })
         res.render("doacoes/doacoes", {header: true, doadores: doadorQuery, doacoes:doacaoQuery, nomeUser:req.session.login});
     })()
+    }
+    else{
+        res.redirect('/');
+    }
 
 });
 

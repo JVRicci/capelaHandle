@@ -4,7 +4,9 @@
 
 <div class="principal">
 <div class="div-pesquisa">
-        <input type="text" class="pesquisa-text" placeholder="Pesquisar Dizimista" value={{pesquisaTxt}}>
+        <input type="text" id="pesquisaTxt" class="pesquisa-text" placeholder="Pesquisar Doador" onchange="pesquisar(this.value)" 
+         onpaste="this.onchange();" oninput="this.onchange();"
+        value={{pesquisaTxt}}>
         
         </input>
       </div>
@@ -42,13 +44,9 @@
       </div>
 
       </div>
-      
-      
-       
-
-
+    
   <!--Imports de scripts-->
-  <script src="js/pesq-dizimista.js">
+  <script src="js/dizimo/pesq-dizimista.js">
 
   </script>
 

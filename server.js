@@ -9,6 +9,7 @@ const session = require("express-session");
 const rotasDizimo = require('./routes/dizimo-posts');
 const rotasLogin = require('./routes/login-rota');
 const rotaDoacoes = require('./routes/doacoes-posts');
+const rotaEventos = require ('./routes/evento-post')
 
 const app = express();
 const port = '3000';
@@ -59,6 +60,12 @@ app.post('/doador', rotaDoacoes.doadorCad);
 app.post('/doacao', rotaDoacoes.doadorCad);
 
 //FIm das rotas de doacoes
+
+//rotas de eventos
+
+app.get('/eventos', rotaEventos.eventosRota)
+
+//Fim das rotas de eventos
 
 // rotas ----------------------------------------
 

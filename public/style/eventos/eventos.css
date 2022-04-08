@@ -1,0 +1,16 @@
+body{
+    color:white;
+}
+
+.flex-container{padding:50px}
+
+#novo-evento{
+    padding:20px;
+    margin-left: 5vh;
+
+    border-radius:10px;
+    background: var(--cor-secundaria--);
+
+    height:35vh;
+    width: 35vh;
+}
