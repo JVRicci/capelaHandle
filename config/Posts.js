@@ -124,6 +124,20 @@ const endereco = db.sequelize.define('endereco',{
     }
 });
 
+const evento = db.sequelize.define('evento',{
+    descricao:{
+        type: db.Sequelize.STRING
+    },
+    dataEvento:{
+        type: db.Sequelize.DATE
+    },
+    responsavel:{
+        type: db.Sequelize.STRING
+    },
+    nome:{
+        type:db.Sequelize.STRING
+    }
+},{freezeTableName: true});
 
 const usuario = db.sequelize.define('usuario',{
 
@@ -168,7 +182,8 @@ doacao.belongsTo(doador,{foreignKey:'idDoador', target:'id'})
 
 
 module.exports= {dizimista, dizimo, 
-                    endereco, contato, 
+                    endereco, evento,
+                    contato, 
                     login, usuario, 
                     doador, doacao}
 

@@ -1,10 +1,79 @@
 <link rel="stylesheet" type="text/css" href="style\eventos\eventos.css">
 
-<div class="flex-container">
-    <div class="col-4" id="novo-evento">
-        <h6>Nome</h6>
-        <h6>Data</h6>
-        <h6>Descrição</h6>
-    </div>
 
+<div class="flex-container" id="div-eventos">
+
+<div class="row">
+
+{{#each listaEventos}}
+
+    <div class="col-3" id="evento">
+        <label for="nome">Nome:<h6 name="nome">{{nome}}</h6></label>
+        <label for="data">Data:<h6 name="data">{{dataEvento}}</h6></label>
+        <label for="responsavel">Responsavel:<h6 name="responsavel">{{responsavel}}</h6></label>
+        <div id="imgEvento"><img src="img/fundo.jpg"/></div>
+    </div>
+{{/each}}
+
+    <div class="col-3" id="novo-evento">
+        <h6>Adcionar novo evento</h6>
+        <img src="img/adcionar.png" alt="Adcionar evento"
+         data-toggle="modal" data-target="#registrar-evento"></div>
+    </div>
+</div>
+</div>
+
+
+<!-- modais -->
+<!-- Modal -->
+<div class="modal fade" id="registrar-evento" tabindex="-1" role="dialog" aria-labelledby="registrar-evento" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registrar-evento-Label">Registrar evento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+    <form method="POST" action="/registrarEvento" >
+      <div class="modal-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <label for="nome-evento">Nome do Evento</label>
+                    <input type="text" Placeholder="Nome do Evento" name="nomeEvento" 
+                    id="nome-evento" class="form-control" required></input>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="data-evento">Data</label>
+                    <input type="date" name="dataEvento" id="data-evento" class="form-control" required></input>
+                </div>
+                <div class="col-6">
+                    <label for="responsavel-evento">Responsavel</label>
+                    <input type="text" name="responsavelEvento" id="responsavel-evento" class="form-control" required></input>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    
+                    <label for="decricao-evento">Descrição do evento</label>
+                    <input type="textarea" class="form-control" placeholder="Descrição" name="descricaoEvento">
+                </div>
+            </div>
+
+
+      </div>
+      <div class="modal-footer">
+          
+        <input type="submit" value="Registrar" class="btn btn-light"></input>
+      </div>
+      
+    </form>
+    </div>
+  </div>
 </div>

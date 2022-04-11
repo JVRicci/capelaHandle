@@ -63,7 +63,9 @@ app.post('/doacao', rotaDoacoes.doadorCad);
 
 //rotas de eventos
 
-app.get('/eventos', rotaEventos.eventosRota)
+app.get('/eventos', rotaEventos.eventosRota);
+
+app.post('/registrarEvento', rotaEventos.registrarEvento);
 
 //Fim das rotas de eventos
 
