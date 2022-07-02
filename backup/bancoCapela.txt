@@ -1,0 +1,5 @@
+id;idContato;idEndereco;idTurma;nome;nascimento;ativo
+1;;;;aaaaa;2019-11-20;Ativo
+2;3;3;;jvricci;2019-11-20;Ativo
+3;4;4;;Andreia;2019-11-20;Ativo
+7;13;13;;Fabricio;2019-11-20;Ativo

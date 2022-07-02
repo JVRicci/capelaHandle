@@ -171,6 +171,28 @@ const login = db.sequelize.define('login',{
     }
 },{freezeTableName: true})
 
+const contas = db.sequelize.define('contas', {
+    descricao:{
+        type: db.Sequelize.STRING
+    },
+    valor:{
+        type: db.Sequelize.REAL
+    },
+    categoria:{
+        type: db.Sequelize.STRING
+    },
+    fornecedor:{
+        type: db.Sequelize.STRING
+    },
+    vencimento:{
+        type: db.Sequelize.STRING
+    },
+    pagamento:{
+        type:db.Sequelize.DATE
+    }
+
+})
+
 
 
 
@@ -185,6 +207,7 @@ module.exports= {dizimista, dizimo,
                     endereco, evento,
                     contato, 
                     login, usuario, 
-                    doador, doacao}
+                    doador, doacao,
+                    contas}
 
 

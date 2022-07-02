@@ -11,7 +11,10 @@
         <label for="nome">Nome:<h6 name="nome">{{nome}}</h6></label>
         <label for="data">Data:<h6 name="data">{{dataEvento}}</h6></label>
         <label for="responsavel">Responsavel:<h6 name="responsavel">{{responsavel}}</h6></label>
-        <div id="imgEvento"><img src="img/fundo.jpg"/></div>
+        <div id="imgEvento"><a href="/evento:{{nome}}">
+          <img src="img/fundo.jpg"/>
+          </a></div>
+
     </div>
 {{/each}}
 

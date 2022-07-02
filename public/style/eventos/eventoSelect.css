@@ -1,0 +1,36 @@
+header{
+    position: relative;
+}
+body{
+    color: white;
+}
+
+hr{
+    border: 1px solid grey;
+}
+
+
+#div-principal{
+    position: static;
+    background: var(--cor-secundaria--);
+    width: 150vh;
+    height: 90vh;
+
+    border-radius:20px;
+    box-shadow: 0 0 10px var(--cor-principal--) inset;
+
+    padding: 10px;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dados-evento{
+    margin-left: 5vh;
+    margin-top: 5vh;
+    background: var(--cor-principal--);
+    padding: 5vh;
+    box-shadow: 0 0 5px white inset;
+    border-radius: 10px;
+}

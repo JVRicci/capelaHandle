@@ -9,7 +9,8 @@ const session = require("express-session");
 const rotasDizimo = require('./routes/dizimo-posts');
 const rotasLogin = require('./routes/login-rota');
 const rotaDoacoes = require('./routes/doacoes-posts');
-const rotaEventos = require ('./routes/evento-post')
+const rotaEventos = require ('./routes/evento-post');
+const rotaContas = require ('./routes/contas-posts');
 
 const app = express();
 const port = '3000';
@@ -64,10 +65,19 @@ app.post('/doacao', rotaDoacoes.doadorCad);
 //rotas de eventos
 
 app.get('/eventos', rotaEventos.eventosRota);
+app.get('/evento:nome', rotaEventos.eventoSelec);
 
 app.post('/registrarEvento', rotaEventos.registrarEvento);
 
+
 //Fim das rotas de eventos
+
+
+//rotas de contas
+
+app.get('/contas',rotaContas.contas);
+
+//fim das rrotas de conta
 
 // rotas ----------------------------------------
 

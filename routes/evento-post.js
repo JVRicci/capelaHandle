@@ -12,7 +12,6 @@ var eventosRota = router.get('/eventos', (req,res)=>{
             raw: true,
             atribute:['nome', 'dataEvento', 'responsavel']
         })
-        console.log(pesqEvento)
         
     res.render('eventos/eventos', {header: true, listaEventos:pesqEvento, nomeUser:req.session.login});
 
@@ -32,4 +31,14 @@ var registrarEvento = router.post('/registrarEvento', (req,res)=>{
     })()
 })
 
-module.exports = {eventosRota, registrarEvento}
+var eventoSelec = router.get('/evento:nome',(req,res)=>{
+    (async()=>{
+        var selectEvento = await post.evento.findOne({
+            raw:true,
+            atribute:['nome', 'dataEvento', 'descricao', 'responsavel']
+        })
+    res.render('eventos/eventoSelect', {header: true, evento:selectEvento, nomeUser:req.session.login})
+    })()
+})
+
+module.exports = {eventosRota, registrarEvento, eventoSelec}

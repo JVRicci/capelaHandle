@@ -1,0 +1,40 @@
+.menuContas{
+    
+    padding: 20px;
+
+    position: inherit;
+    justify-content:center;
+    align-items:center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 255, 255) inset;
+
+    height:300px;
+    width: 138vh;
+    background: var(--cor-principal--);
+}
+
+.pesq-div{
+
+    padding:30px;
+
+    margin-top:15px;
+    margin-bottom:30px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 255, 255) inset;
+
+    height:12vh;
+    width: 132vh;
+
+    background: var(--cor-secundaria--)
+}
+
+.modal-header, .modal-body, .modal-footer{
+    background: var(--cor-principal--);
+    color: white;
+}
+
