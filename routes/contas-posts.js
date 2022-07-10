@@ -20,4 +20,19 @@ var contas = router.get('/contas',(req,res)=>{
     
 })
 
-module.exports = {contas}
+var cadContas = router.post('/cadContas', (req, res)=>{
+    (async()=>{
+        var cadastrar = await post.contas.create({
+            descricao: req.body.descricaoTxt,
+            valor: req.body.valorTxt,
+            categoria: req.body.categoriaCombo,
+            fornecedor: "João Ricci",// req.body.fornecedorTxt,
+            vencimento: req.body.vencimentoDate,
+            pagamento: req.body.pagamentoDate
+        })
+
+        res.redirect('/contas')
+    })()
+})
+
+module.exports = {contas, cadContas}

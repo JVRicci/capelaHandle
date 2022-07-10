@@ -76,7 +76,7 @@ app.post('/registrarEvento', rotaEventos.registrarEvento);
 //rotas de contas
 
 app.get('/contas',rotaContas.contas);
-
+app.post('/cadContas', rotaContas.cadContas);
 //fim das rrotas de conta
 
 // rotas ----------------------------------------

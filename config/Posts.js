@@ -176,7 +176,7 @@ const contas = db.sequelize.define('contas', {
         type: db.Sequelize.STRING
     },
     valor:{
-        type: db.Sequelize.REAL
+        type: db.Sequelize.STRING
     },
     categoria:{
         type: db.Sequelize.STRING
@@ -185,7 +185,7 @@ const contas = db.sequelize.define('contas', {
         type: db.Sequelize.STRING
     },
     vencimento:{
-        type: db.Sequelize.STRING
+        type: db.Sequelize.DATE
     },
     pagamento:{
         type:db.Sequelize.DATE

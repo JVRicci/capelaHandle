@@ -9,7 +9,7 @@
         <dir class="row">
         <div class="col-lg">
         <select name="estado" class="form-control" aria-label="Estado da Conta">
-            <option selected>Estado da Conta</option>
+            <option value="todas">Todas</option>
             <option value="aberto">Em Aberto</option>
             <option value="vencido">Vencido</option>
             <option value="pago">Pago</option>
@@ -19,9 +19,6 @@
             <button name="listConta" class="btn btn-dark" id="filtro-btn">Filtrar</button>
             </div>
 
-            <div class="col-sm">
-            <button name="listTudo" class="btn btn-dark" id="listTudo-btn">Listar Todas</button>
-            </div>
 
             <div class="col-sm">
             <button name="cadastraConta" class="btn btn-dark" id="caddastrar-btn" 
@@ -50,6 +47,7 @@
             {{#each listaContas}}
             <tr>
                 <td></td>
+                <td>{{id}}</td>
                 <td>{{descricao}}</td>
                 <td>{{valor}}</td>
                 <td>{{categoria}}</td>
@@ -74,7 +72,7 @@
         </button>
       </div>
       
-    <form id="cad-conta" action="/cadConta" method="post">
+    <form id="cad-conta" action="/cadContas" method="post">
       <div class="modal-body">
 
             <div class="container">
@@ -99,8 +97,8 @@
                 </div>
 
                 <div class="col-sm">
-                    <label for="estado">Categoria</label>
-                        <select name="estado" class="form-control" aria-label="Estado da Conta" required>
+                    <label for="categoriaCombo">Categoria</label>
+                        <select name="categoriaCombo" id="categoriaCombo" class="form-control" required>
                             <option value=""></option>
                             <option value="aberto">Unico</option>
                             <option value="vencido">Mensal</option>
@@ -115,16 +113,50 @@
                 </div>
             </div>
 
-            
+            <div class="row">
+                <div class="col-12">
+                    <label for="fonecedorText">Fornecedor</label>
+                    <input type="text" name="fonecedorTxt" id="fonecedorTxt" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <label for="responsavelCombo">Responsavel: </label>
+                    
+                    <select name="responsavelCombo" id="responsavelCombo" class="form-control">
+                        <option value="">{{nomeUser}}</option>
+                    </select>
+                </div>
+
+                <div class="col-4">
+                    <label for="pagamentoCombo">Pagamento:</label>
+                    <select name="pagamentoCombo" id="pagamentoCombo" class="form-control">
+                        <option value="cartao">Cartão</option>
+                        <option value="boleto">Boleto</option>
+                        <option value="dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+
+                <div class="col-4">
+                    <label for="estadoCombo">Estado</label>
+                    <select name="estadoCombo" id="pagamentoCombo" class="form-control">
+                        <option value="aberta">Aberta</option>
+                        <option value="vencida">Vencida</option>
+                        <option value="paga">Paga</option>
+                    </select>
+                </div>
+            </div>
        
         
             </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-dark">Registrar</button>
+        <input type="submit" class="btn btn-dark" value="Registrar"></input>
       </div>
        </form>
     </div>
   </div>
 </div>
+
